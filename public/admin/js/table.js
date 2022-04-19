@@ -2,7 +2,9 @@
 //     $('#user-table').DataTable();
 // } );
 
-$(document).ready(function () {
+$(function () {
+    // $("#user-table").DataTable();
+
     console.log("ger");
     $("#user-table").DataTable({
         bPaginate: true,
@@ -44,3 +46,7 @@ $(document).ready(function () {
         bAutoWidth: true,
     });
 });
+
+// $(document).ready(function () {
+
+// });
