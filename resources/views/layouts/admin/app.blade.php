@@ -40,6 +40,7 @@
 
   <!-- custom scripts -->
   <script src="{{ asset('admin/js/table.js') }}" defer></script>
+  <script src="{{ asset('admin/js/sidebar-animation.js') }}" defer></script>
 
   <script src="{{ asset('admin/js/sidebar.js') }} " defer></script>
   <script src="{{ asset('admin/js/table.js') }} " defer></script>
@@ -70,22 +71,6 @@
         </div>
     </div>
   </div>
-
-  
-<script>
- 
-</script>
- <script>
-   
-  $(window).load(function() {
-    $('.material-icons').css('opacity','1');
-    $('.sidebar-text').css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},1100);
-
-   });
-
-   
-  
- </script>
 
   
 </body>
