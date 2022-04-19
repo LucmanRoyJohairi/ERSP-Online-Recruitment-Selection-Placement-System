@@ -31,7 +31,22 @@
   <link href="{{ asset('admin/images/favicon/favicon.ico') }} " rel="icon">
   <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- commented the script below 4/19/22 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- custom scripts -->
+
+<script src="{{ asset('admin/vendors/js/vendor.bundle.base.js') }}" defer></script>
+  <script src="{{ asset('admin/js/sidebar.js') }} " defer></script>
+  <script src="{{ asset('admin/js/rating.js') }} " defer></script>
+  <script src="{{ asset('admin/js/joboffer.js') }} " defer></script>
+  <script src="{{ asset('admin/js/screening.js') }} " defer></script>
+  
+  <script src="{{ asset('admin/js/progress.js') }} " defer></script>
+  <script src="{{ asset('admin/js/material.js') }} " defer></script>
+  <script src="{{ asset('admin/js/misc.js') }} " defer></script>
+  <!-- endinject -->
 
 </head>
 <body>
@@ -342,25 +357,6 @@
 
 
     </script>
-    
-  <!-- plugins:js -->
-  <script src="{{ asset('admin/vendors/js/vendor.bundle.base.js') }}"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
-  <!--Boostrap js-->
-  <script src="{{ asset('admin/js/sidebar.js') }} "></script>
-  <script src="{{ asset('admin/js/rating.js') }} "></script>
-  <script src="{{ asset('admin/js/joboffer.js') }} "></script>
-  <script src="{{ asset('admin/js/screening.js') }} "></script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="{{ asset('admin/js/progress.js') }} "></script>
-  <script src="{{ asset('admin/js/material.js') }} "></script>
-  <script src="{{ asset('admin/js/misc.js') }} "></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
+
 </body>
 </html>
