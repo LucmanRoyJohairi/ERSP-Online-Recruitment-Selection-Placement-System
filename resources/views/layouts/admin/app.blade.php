@@ -43,7 +43,7 @@
   <script src="{{ asset('admin/js/sidebar-animation.js') }}" defer></script>
 
   <script src="{{ asset('admin/js/sidebar.js') }} " defer></script>
-  <script src="{{ asset('admin/js/table.js') }} " defer></script>
+  <!-- <script src="{{ asset('admin/js/table.js') }} " defer></script> -->
   <script src="{{ asset('admin/vendors/chartjs/Chart.min.js') }} " defer></script>
   <script src="{{ asset('admin/vendors/jvectormap/jquery-jvectormap.min.js') }} " defer></script>
   <script src="{{ asset('admin/vendors/jvectormap/jquery-jvectormap-world-mill-en.js') }} " defer></script>
