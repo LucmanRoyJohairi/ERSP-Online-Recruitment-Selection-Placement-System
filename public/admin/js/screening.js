@@ -1,100 +1,89 @@
-var current =  $('.step.active').length;
+var current = $(".step.active").length;
 
-if(current == 2){
-    userId = [];
-    TeachingDemoMessage = $('#teaching-demo-message').val();
+if (current == 2) {
+	userId = [];
+	TeachingDemoMessage = $("#teaching-demo-message").val();
 
-    $("input:checkbox[name=user-chk]" ).change(function(){
-      userId = [];
+	$("input:checkbox[name=user-chk]").on("change", function () {
+		userId = [];
 
+		$("input:checkbox[name=user-chk]:checked").each(function () {
+			userId.push(parseInt($(this).val()));
+		});
+	});
+	$("#interview-send").on("click", function () {
+		message = $("#interview-message").val();
 
-        $('input:checkbox[name=user-chk]:checked').each(function(){
+		screeningType = "interview";
+		$("#interview-send").attr("disabled", true);
+		console.log(message);
+		$.ajax({
+			url: "process/screening/send",
+			type: "POST",
+			data: {
+				userID: userId,
+				message: message,
+				type: screeningType,
+			},
+			success: function (response) {
+				$("#interview-send").attr("disabled", false);
 
-            userId.push(parseInt($(this).val()));
-            
-        });
+				location.reload();
+			},
+			error: function (error) {
+				console.log(error);
+			},
+		});
+	}); //btn
 
+	$("#teaching-demo-send").on("click", function () {
+		message = $("#teaching-demo-message").val();
 
-    });
-    $('#interview-send').click(function(){
-      message = $('#interview-message').val();
+		screeningType = "teaching-demo";
+		$("#teaching-demo-send").attr("disabled", true);
+		console.log(message);
+		$.ajax({
+			url: "process/screening/send",
+			type: "POST",
+			data: {
+				userID: userId,
+				message: message,
+				type: screeningType,
+			},
+			success: function (response) {
+				$("#teaching-demo-send").attr("disabled", false);
 
-      screeningType = 'interview'
-      $('#interview-send').attr("disabled", true);
-        console.log(message);
-        $.ajax({
-            url: "process/screening/send",
-            type:"POST",
-            data:{
-              userID : userId,
-              message : message,
-              type : screeningType,
-            },
-            success:function(response){
-              $('#interview-send').attr("disabled", false);
+				location.reload();
+			},
+			error: function (error) {
+				console.log(error);
+			},
+		});
+	}); //btn
 
-  
-              location.reload();
-            },
-            error: function(error) {
-            console.log(error);
-            }
-          });
-    });//btn
+	//skilltest
+	$("#skill-test-send").on("click", function () {
+		message = $("#skill-test-message").val();
 
-    $('#teaching-demo-send').click(function(){
-      message = $('#teaching-demo-message').val();
+		screeningType = "skill-test";
+		$("#skill-test-send").attr("disabled", true);
+		console.log(message);
+		$.ajax({
+			url: "process/screening/send",
+			type: "POST",
+			data: {
+				userID: userId,
+				message: message,
+				type: screeningType,
+			},
+			success: function (response) {
+				$("#skill-test-send").attr("disabled", false);
 
-      screeningType = 'teaching-demo'
-      $('#teaching-demo-send').attr("disabled", true);
-        console.log(message);
-        $.ajax({
-            url: "process/screening/send",
-            type:"POST",
-            data:{
-              userID : userId,
-              message : message,
-              type : screeningType,
-            },
-            success:function(response){
-              $('#teaching-demo-send').attr("disabled", false);
-
-  
-              location.reload();
-            },
-            error: function(error) {
-            console.log(error);
-            }
-          });
-    });//btn
-
-    //skilltest
-    $('#skill-test-send').click(function(){
-      message = $('#skill-test-message').val();
-
-      screeningType = 'skill-test'
-      $('#skill-test-send').attr("disabled", true);
-        console.log(message);
-        $.ajax({
-            url: "process/screening/send",
-            type:"POST",
-            data:{
-              userID : userId,
-              message : message,
-              type : screeningType,
-            },
-            success:function(response){
-              $('#skill-test-send').attr("disabled", false);
-
-  
-              location.reload();
-            },
-            error: function(error) {
-            console.log(error);
-            }
-          });
-    });//btn
-    
-
-  }
-  
+				location.reload();
+			},
+			error: function (error) {
+				console.log(error);
+			},
+		});
+	}); //btn
+}
