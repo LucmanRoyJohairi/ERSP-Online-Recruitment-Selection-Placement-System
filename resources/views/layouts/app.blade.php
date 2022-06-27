@@ -17,11 +17,13 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+  <link href="/css/app.css" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-  <link href="{{ asset('applicant/lib/bootstrap/css/bootstrap.min.css') }} " rel="stylesheet">
-
+  <!-- <link href="{{ asset('applicant/lib/bootstrap/css/bootstrap.min.css') }} " rel="stylesheet"> -->
+  <!-- <link href="{{ asset('bootstrap/css/bootstrap.min.css') }} " rel="stylesheet"> -->
+  
   <!-- Libraries CSS Files -->
   <link href="{{ asset('applicant/lib/font-awesome/css/font-awesome.min.css') }} " rel="stylesheet">
   <link href="{{ asset('applicant/lib/animate/animate.min.css') }} " rel="stylesheet">
@@ -29,12 +31,13 @@
   <link href="{{ asset('applicant/lib/owlcarousel/assets/owl.carousel.min.css') }} " rel="stylesheet">
   <link href="{{ asset('applicant/lib/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
   <link href="{{ asset('applicant/lib/ionicons/css/ionicons.min.css') }} " rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script> -->
   <!-- Main Stylesheet File -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.79/theme-default.min.css">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script> -->
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.79/theme-default.min.css"> -->
   
 @yield('style')
 </head>
@@ -340,136 +343,18 @@
   </div>
 </div>
  
-  <script>
-  $(document).ready(function(){
-    
-
-    $.ajaxSetup({
-      
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
-  });
-
-  $('.btn-next').click(function(){
-      window.location.href = "#";
-  });
-
-  // for (let i = 0; i < 2; i++) {
-  //   $('#upload_later1').click(function(e){
-  //     e.preventDefault();
-  //     console.log('hello0');
-  //   });
-  // }
-for (let i = 1; i < 24; i++) {
-  // console.log('skipCheck' + i);
-  $('#skipCheck'+ i).change(function() {
-    $('#preEmp-input'+ i).attr('disabled', this.checked);
-  });
-}
-
-  //login form
-  if($('#login-form').length > 0){
-      $('#login-form').validate({ 
-        rules: {  
-          email: {
-            required : true,
-            maxlength: 50,
-            email: true,
-          },
-          password: {
-            required : true,
-          }
-        },//rules
-        messages : {
-          email: {
-            required : '*This field cannot be left blank',
-            maxlength : '*Email should not exceed 50 characters',
-            maxlength : '*you must enter be a valid email',
-          },
-          password: {
-            required : '*This field cannot be left blank',
-          }
-        }
-      });
-    }
-
-
-
-    $('#declineOffer').click(function(e){
-      e.preventDefault();
-      $.ajax({
-          url: "view/decline",
-          type:"POST",
-          data:{
-            response: 'declined',
-            "_token": "{{ csrf_token() }}",
-          },
-          success:function(response){
-            console.log(response);
-            // if(response) {
-              // window.location.href = '/path';
-              $('.success').text(response.success);
-              var url = window.location.href;
-
-              if (url.substr(-1) == '/') url = url.substr(0, url.length - 2);
-              url = url.split('/');
-              url.pop();
-              url.pop();
-              window.location = url.join('/');
-              // location.reload();
-
-            // }
-          },
-          error: function(error) {
-          console.log(error);
-          }
-        });
-
-    });
-    
-    $('#acceptOffer').click(function(e){
-      e.preventDefault();
-      var spinner = '<div class="spinner-border" role="status"><span class="sr-only"></span></div>';
-      $("#acceptOffer").html(spinner);
-      $.ajax({
-          url: "view/accept",
-          type:"POST",
-          data:{
-            response: 'declined',
-            "_token": "{{ csrf_token() }}",
-
-          },
-          success:function(response){
-            console.log(response);
-            if(response) {
-              $('.success').text(response.success);
-              var url = window.location.href;
-              if (url.substr(-1) == '/') url = url.substr(0, url.length - 2);
-              url = url.split('/');
-              url.pop();
-              url.pop();
-              window.location = url.join('/');
-
-            }
-          },
-          error: function(error) {
-          console.log(error);
-          }
-        });
-        // location.reload();
-    });
-  </script>
+  
   @yield('script')
 
   <!-- JavaScript Libraries -->
   
 
+  <script src="/js/app.js"></script>
+  <script src="{{ asset('applicant/js/login.js') }} "></script>
 
-  <script src="{{ asset('applicant/lib/jquery/jquery.min.js') }} "></script>
-  <script src="{{ asset('applicant/lib/jquery/jquery-migrate.min.js') }} "></script>
-  <script src="{{ asset('applicant/lib/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
+  <!-- <script src="{{ asset('applicant/lib/jquery/jquery.min.js') }} "></script> -->
+  <!-- <script src="{{ asset('applicant/lib/jquery/jquery-migrate.min.js') }} "></script> -->
+  <!-- <script src="{{ asset('applicant/lib/bootstrap/js/bootstrap.bundle.min.js') }} "></script> -->
   <script src="{{ asset('applicant/lib/easing/easing.min.js') }} "></script>
   <script src="{{ asset('applicant/lib/superfish/hoverIntent.js') }} "></script>
   <script src="{{ asset('applicant/lib/superfish/superfish.min.js') }} "></script>
@@ -483,7 +368,6 @@ for (let i = 1; i < 24; i++) {
 
   <!-- Template Main Javascript File -->
   <script src="{{ asset('applicant/js/main2.js') }} "></script>
-  <script src="{{ asset('applicant/js/login.js') }} "></script>
 
 
 </body>
