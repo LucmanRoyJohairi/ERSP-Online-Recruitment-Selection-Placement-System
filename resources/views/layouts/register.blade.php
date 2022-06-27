@@ -17,6 +17,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+  <!-- <link href="/css/app.css" rel="stylesheet"> -->
 
   <!-- Bootstrap CSS File -->
   
@@ -29,17 +30,19 @@
   <link href="{{ asset('applicant/lib/owlcarousel/assets/owl.carousel.min.css') }} " rel="stylesheet">
   <link href="{{ asset('applicant/lib/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
   <link href="{{ asset('applicant/lib/ionicons/css/ionicons.min.css') }} " rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-  <script src="{{ asset('admin/vendors/js/vendor.bundle.base.js') }} "></script>
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"> -->
+  <!-- <script src="{{ asset('admin/vendors/js/vendor.bundle.base.js') }} "></script> -->
   
   <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-
-  <!-- Main Stylesheet File -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.79/theme-default.min.css">
+  <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> -->
+
+  <!-- Main Stylesheet File -->
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.79/theme-default.min.css"> -->
+<!-- <script src="/js/app.js" defer></script> -->
   
 @yield('style')
 </head>
@@ -471,51 +474,51 @@ console.log('progress: ' + formStepsNum);
   </script>
  
   <script>
-  $(document).ready(function(){
-    $('#myTable').DataTable({
-    "bPaginate": true,
-    "bLengthChange": true,
-    "bFilter": true,
-    "bInfo": false,
-    "bAutoWidth": true });
+  // $(document).ready(function(){
+  //   $('#myTable').DataTable({
+  //   "bPaginate": true,
+  //   "bLengthChange": true,
+  //   "bFilter": true,
+  //   "bInfo": false,
+  //   "bAutoWidth": true });
     
 
-    $.ajaxSetup({
+  //   $.ajaxSetup({
       
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
-  });
+  //     headers: {
+  //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  //     }
+  //   });
+  // });
   
-  $('.btn-next').click(function(){
-      window.location.href = "#";
-  });
-  //login form
-  if($('#login-form').length > 0){
-      $('#login-form').validate({ 
-        rules: {  
-          email: {
-            required : true,
-            maxlength: 50,
-            email: true,
-          },
-          password: {
-            required : true,
-          }
-        },//rules
-        messages : {
-          email: {
-            required : '*This field cannot be left blank',
-            maxlength : '*Email should not exceed 50 characters',
-            maxlength : '*you must enter be a valid email',
-          },
-          password: {
-            required : '*This field cannot be left blank',
-          }
-        }
-      });
-    }
+  // $('.btn-next').click(function(){
+  //     window.location.href = "#";
+  // });
+  // //login form
+  // if($('#login-form').length > 0){
+  //     $('#login-form').validate({ 
+  //       rules: {  
+  //         email: {
+  //           required : true,
+  //           maxlength: 50,
+  //           email: true,
+  //         },
+  //         password: {
+  //           required : true,
+  //         }
+  //       },//rules
+  //       messages : {
+  //         email: {
+  //           required : '*This field cannot be left blank',
+  //           maxlength : '*Email should not exceed 50 characters',
+  //           maxlength : '*you must enter be a valid email',
+  //         },
+  //         password: {
+  //           required : '*This field cannot be left blank',
+  //         }
+  //       }
+  //     });
+  //   }
 
   </script>
   @yield('script')
