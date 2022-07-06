@@ -21,9 +21,13 @@
                   <div class="mdc-card">
                     <div class="d-flex justify-content-between align-items-center">
                       <h4 class="card-title mb-2 mb-sm-0">{{ $jobs->name}}</h4>
+                      @if(count($apply) > 0)
+                      <!-- <h1>{{ $apply }}</h1> -->
                       <div class="d-flex justtify-content-between align-items-center">
                         <a href="{{ route('application-process', $jobs->id) }}"><button class="mdc-button mdc-button--raised text-white" style="background-color: #F7B41E;">PROCEED TO APPLICATION PROCESS</button></a>
                       </div>
+                      
+                      @endif
                     </div>
                   </div>
                   <div class="table-responsive p-4">
