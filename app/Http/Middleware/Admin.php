@@ -21,12 +21,12 @@ class Admin
             return redirect()->route('login');
         }
 
-        //customer role
+        // admin role
         if(Auth::user()->userTypeId == 1){
             return $next($request);
         }
 
-        //admin role
+        //applicant role
         if(Auth::user()->userTypeId == 2){
             return redirect()->route('applicant-dashboard');
         }
