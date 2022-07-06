@@ -106,8 +106,8 @@
         </div>
 
 
-        <div class="btn-group2">
-          <button class="register-btn btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="btn-group2 dropdown">
+          <button class="register-btn btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Hello, {{ Auth()->user()->firstname}}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -350,24 +350,25 @@
   
 
   <script src="/js/app.js"></script>
+  <!-- <script src="/js/bootstrap.js"></script> -->
   <script src="{{ asset('applicant/js/login.js') }} "></script>
 
   <!-- <script src="{{ asset('applicant/lib/jquery/jquery.min.js') }} "></script> -->
   <!-- <script src="{{ asset('applicant/lib/jquery/jquery-migrate.min.js') }} "></script> -->
   <!-- <script src="{{ asset('applicant/lib/bootstrap/js/bootstrap.bundle.min.js') }} "></script> -->
-  <script src="{{ asset('applicant/lib/easing/easing.min.js') }} "></script>
-  <script src="{{ asset('applicant/lib/superfish/hoverIntent.js') }} "></script>
-  <script src="{{ asset('applicant/lib/superfish/superfish.min.js') }} "></script>
-  <script src="{{ asset('applicant/lib/wow/wow.min.js') }} "></script>
-  <script src="{{ asset('applicant/lib/owlcarousel/owl.carousel.min.js') }} "></script>
+  <!-- <script src="{{ asset('applicant/lib/easing/easing.min.js') }} "></script> -->
+  <!-- <script src="{{ asset('applicant/lib/superfish/hoverIntent.js') }} "></script> -->
+  <!-- <script src="{{ asset('applicant/lib/superfish/superfish.min.js') }} "></script> -->
+  <!-- <script src="{{ asset('applicant/lib/wow/wow.min.js') }} "></script> -->
+  <!-- <script src="{{ asset('applicant/lib/owlcarousel/owl.carousel.min.js') }} "></script>
   <script src="{{ asset('applicant/lib/magnific-popup/magnific-popup.min.js') }} "></script>
-  <script src="{{ asset('applicant/lib/sticky/sticky.js') }} "></script>
+  <script src="{{ asset('applicant/lib/sticky/sticky.js') }} "></script> -->
 
   <!-- Contact Form JavaScript File -->
-  <script src="{{ asset('applicant/contactform/contactform.js') }} "></script>
+  <!-- <script src="{{ asset('applicant/contactform/contactform.js') }} "></script> -->
 
   <!-- Template Main Javascript File -->
-  <script src="{{ asset('applicant/js/main2.js') }} "></script>
+  <!-- <script src="{{ asset('applicant/js/main2.js') }} "></script> -->
 
 
 </body>
