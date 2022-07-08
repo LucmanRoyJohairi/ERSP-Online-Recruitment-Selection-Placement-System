@@ -58,18 +58,19 @@
                       <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-2-phone">
                         <div>
                           @if($latest)
+                          <!-- <p>{{ $latest}}</p> -->
                           <div class="d-flex justify-content-between">
                       <h3 class="font-weight-normal">{{ strtoupper($latest->name) }}</h3>
                     </div>
                           <h5 class="font-weight-normal mt-2">{{ count($latest->applications) }} Applicants</h5>
-                          <a href="pages/jobs/job-details.html"><button class="mdc-button mt-3 mdc-button--light">
+                          <a href="{{route('view-job', $latest->id)}}"><button class="mdc-button mt-3 mdc-button--light">
                               View Job Details
                             </button>
                           </a>
                           
                           @else
                           <h5 class="font-weight-normal mt-2">Add a new job right now</h5>
-                          <a href="pages/jobs/job-details.html"><button class="mdc-button mt-3 mdc-button--light">
+                          <a href="{{ route('add-jobs') }}"><button class="mdc-button mt-3 mdc-button--light">
                               Add new job
                             </button>
                           </a>
