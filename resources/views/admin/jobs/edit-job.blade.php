@@ -8,7 +8,7 @@
               <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
                 <div class="mdc-card">
                   <!-- Dapat ang back button is mag back siya sa last niya gi adtoan -->
-                  <a href=""><button class="mdc-button mdc-button--raised filled-button--light text-primary"><i class="fa fa-backward"></i>Back</button></a>
+                  <!-- <a href=""><button class="mdc-button mdc-button--raised filled-button--light text-primary"><i class="fa fa-backward"></i>Back</button></a> -->
                   <h5 class="card-title text-primary text-center" style="font-weight: 700; font-size: 25px;">Edit Job Post</h5>
                   
 
@@ -75,10 +75,10 @@
                     <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: 700; font-size: 20px;">Experience Requirements</label>
                     <textarea class="form-control" name="experience_req" value="{{ $job->requirements->experience_req }}" id="exampleFormControlTextarea1" rows="5">{{ $job->requirements->experience_req }}</textarea>
                   </div>
-                  <div class="mb-3">
+                  <!-- <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: 700; font-size: 20px;">Documentary Requirements</label>
                     <textarea class="form-control" name="document_req" value="{{ $job->requirements->document_req }}" id="exampleFormControlTextarea1" rows="5">{{ $job->requirements->document_req }}</textarea>
-                  </div>
+                  </div> -->
                   <button type="submit" class="mdc-button mdc-button--raised" style="padding: 30px; font-size: 15px;  margin-top: 20px;">UPDATE</button>
                 </div>
               </div>
