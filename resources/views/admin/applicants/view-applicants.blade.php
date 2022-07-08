@@ -7,14 +7,14 @@
             <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
               <div class="mdc-card bg-primary">
                 <div class="d-flex justtify-content-between align-items-center">
-                  <a href="{{ route('admin-dashboard') }}"><button class="filled-button--light text-primary" style="padding:10px 15px 10px 15px;"><i class="fa fa-backward"></i></button></a>
+                  <!-- <a href="{{ route('admin-dashboard') }}"><button class="btn btn-light" style="padding:10px 15px 10px 15px;">Back</button></a> -->
                   <!-- Dapat ang back button is mag back siya sa last niya na gi open -->
                 </div>
-                <h6 class="card-title text-white text-center">{{ $applicant->firstname}} {{ $applicant->middlename}} {{ $applicant->lastname}}</h6>
+                <!-- <h6 class="card-title text-white text-center">{{ $applicant->firstname}} {{ $applicant->middlename}} {{ $applicant->lastname}}</h6> -->
               </div>
             </div>
             <div class="mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-desktop stretch-card">
-              <div class="mdc-card">
+              <!-- <div class="mdc-card">
                 <div class="container">                      
                   <div class="row text-center justify-content-center mb-5">
                       <div class="col-xl-6 col-lg-8">
@@ -64,7 +64,7 @@
                       </div>
                   </div>
               </div>
-              </div>
+              </div> -->
             </div>
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
               <div class="mdc-card p-0">
@@ -303,7 +303,8 @@
                           </tr>
                           <tr>
                             <td class="text-left">Personal Data Sheet 3 Original (Notarized) - Long Bond Paper</td>
-                             @if($preEmpDocs[0])
+                             @if($preEmpDocs[0] && $preEmpDocs[0]->file_path != 'to follow up')
+                             <p> {{ $preEmpDocs[0]->file_path}}</p>
                              <td><a href="{{ $preEmpDocs[0]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -311,7 +312,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Clearance from Previous employer - 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[1])
+                             @if($preEmpDocs[1] && $preEmpDocs[1]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[1]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -319,7 +320,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Original NSO Birth Certificate - 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[2])
+                             @if($preEmpDocs[2] && $preEmpDocs[2]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[2]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -327,7 +328,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Marriage Certificate (if married) - 2 Photocopy</td>
-                             @if($preEmpDocs[3])
+                             @if($preEmpDocs[3] && $preEmpDocs[3]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[3]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -335,7 +336,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Virth Certificate of children - 2 Photocopy</td>
-                             @if($preEmpDocs[4])
+                             @if($preEmpDocs[4] && $preEmpDocs[4]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[4]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -347,7 +348,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">2 Authenticated Copies of Transcript of Records</td>
-                             @if($preEmpDocs[5])
+                             @if($preEmpDocs[5] && $preEmpDocs[5]->file_path != 'to follow up')
                             <td><a href="{{ $preEmpDocs[5]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                             @else
                             <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -355,7 +356,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">2 Authenticated Copies of Diploma (College, Graduate School, Post-graduate)</td>
-                             @if($preEmpDocs[6])
+                             @if($preEmpDocs[6] && $preEmpDocs[6]->file_path != 'to follow up')
                             <td><a href="{{ $preEmpDocs[6]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                             @else
                             <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -363,7 +364,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">2 Authenticated Copies of Certificate of Eligibility (if applicable)</td>
-                             @if($preEmpDocs[7])
+                             @if($preEmpDocs[7] && $preEmpDocs[7]->file_path != 'to follow up')
                         <td><a href="{{ $preEmpDocs[7]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                         @else
                         <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -371,7 +372,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">2 Authenticated Copies of PRC ID (if applicable)</td>
-                             @if($preEmpDocs[8])
+                             @if($preEmpDocs[8] && $preEmpDocs[8]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[8]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -387,7 +388,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">a. Blood Test - 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[9])
+                             @if($preEmpDocs[9] && $preEmpDocs[9]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[9]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -395,7 +396,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">b. Urinalysis - 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[10])
+                             @if($preEmpDocs[10] && $preEmpDocs[10]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[10]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -403,7 +404,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">c. Chest X-ray - 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[11])
+                             @if($preEmpDocs[11] && $preEmpDocs[11]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[11]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -411,7 +412,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">d. Drug Test - 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[12])
+                             @if($preEmpDocs[12] && $preEmpDocs[12]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[12]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -419,7 +420,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">e. Neuropsychiatric Examination w/ Pyschological Test 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[13])
+                             @if($preEmpDocs[13] && $preEmpDocs[13]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[13]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -427,7 +428,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">NBI Clearance - 1 Original & 1 Photocopy</td>
-                             @if($preEmpDocs[14])
+                             @if($preEmpDocs[14] && $preEmpDocs[14]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[14]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -435,7 +436,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Statement of Assets, Liabilities and Net Worth (SALN) - 3 Original (Notarized)</td>
-                             @if($preEmpDocs[15])
+                             @if($preEmpDocs[15] && $preEmpDocs[15]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[15]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -443,7 +444,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">BIR Form 1902 (Application for Refistration) and Form 2305 - 2 Original (Downloadable)</td>
-                             @if($preEmpDocs[16])
+                             @if($preEmpDocs[16] && $preEmpDocs[16]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[16]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -451,7 +452,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Pag Ibig Fund member’s Data Form (MDF) with Registration Tracking Number (RTN) - 1 Original & 1 photocopy</td>
-                             @if($preEmpDocs[17])
+                             @if($preEmpDocs[17] && $preEmpDocs[17]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[17]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -459,7 +460,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Philhealth Number and Philhealth Membership Form with Philhealth Number - 2 Original</td>
-                             @if($preEmpDocs[18])
+                             @if($preEmpDocs[18] && $preEmpDocs[18]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[18]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -471,7 +472,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Clearance from money, property and legal accountabilities from the previous office.</td>
-                             @if($preEmpDocs[19])
+                             @if($preEmpDocs[19] && $preEmpDocs[19]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[19]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -480,7 +481,7 @@
                           <tr>
                             <td class="text-left">Certified true copy of pre-audited disbursement voucher of last salary from previous agancy and/or <br>
                               Certification by the Chief Accountant of last salary received from previous office duty verified by the assigned auditor thereat.</td>
-                             @if($preEmpDocs[20])
+                             @if($preEmpDocs[20] && $preEmpDocs[20]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[20]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -488,7 +489,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Certified of Available Leave Credits</td>
-                             @if($preEmpDocs[21])
+                             @if($preEmpDocs[21] && $preEmpDocs[21]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[21]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
@@ -496,7 +497,7 @@
                           </tr>
                           <tr>
                             <td class="text-left">Service Record</td>
-                             @if($preEmpDocs[22])
+                             @if($preEmpDocs[22] && $preEmpDocs[22]->file_path != 'to follow up')
                              <td><a href="{{ $preEmpDocs[22]->file_path }}" class="mdc-button mdc-button--raised">Download</a></td>
                              @else
                              <td><button class="mdc-button mdc-button--raised" disabled>Download</button></td>
