@@ -13,17 +13,19 @@
 
                   
                         <!-- nav options -->
-                        <ul class="nav nav-pills nav-fill shadow-sm mb-3 " id="pills-tab" role="tablist">
-                            <li class="nav-item"> <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ACTIVE</a> </li>
-                            <li class="nav-item"> <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">HIRED</a> </li>
-                            
-                        </ul> 
+                      <div class="card-body bg-white text-primary  mailbox-widget pb-0">
+
+                        <nav >
+                          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ACTIVE</a>
+                            <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">INACTIVE ( Hired )</a>
+                          </div>
+                        </nav>
+                      <div>
                         <!-- content -->
-      
-                            <div class="tab-content " id="pills-tabContent">
-                                  <!-- 1st card -->
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                  <div class="table-responsive">
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                          <div class="table-responsive mt-3">
                                     <table class="table table-applicants">
                                       <thead class="bg-primary">
                                         <tr>
@@ -91,12 +93,9 @@
                                       </tbody>
                                     </table>
                                   </div>
-                                </div>
-                              
-                              <!-- 2nd card -->
-
-                                  <div class="tab-pane  fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                    <div class="table-responsive">
+                          </div>
+                          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                          <div class="table-responsive mt-3">
                                       <table class="table ">
                                         <thead class="bg-primary">
                                           <tr>
@@ -141,16 +140,10 @@
                                         </tbody>
                                       </table>
                                     </div>
-                                  </div> 
-                          </div> <!--end tab content-->
-                  
-
-                
-
-              
-              
-              
-             
+                          </div>
+                          
+                        </div>
+                            
                 </div>
               </div>
             </div>
