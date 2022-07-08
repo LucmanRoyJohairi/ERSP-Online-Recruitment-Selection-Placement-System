@@ -1,6 +1,6 @@
 <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open" id="sidebar">
       <div class="mdc-drawer__header">
-        <a href="index.html" class="brand-logo">
+        <a href="" class="brand-logo" id="side-logo">
           e<span>RSP</span></a>
         </a>
       </div>
