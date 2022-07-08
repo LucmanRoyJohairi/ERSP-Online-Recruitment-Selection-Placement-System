@@ -40,18 +40,7 @@
   <!-- <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script> -->
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
-  <!-- custom scripts -->
-  <script src="{{ asset('admin/js/table.js') }}" defer></script>
-  <script src="{{ asset('admin/js/sidebar-animation.js') }}" defer></script>
-
-  <script src="{{ asset('admin/js/sidebar.js') }} " defer></script>
-  <!-- <script src="{{ asset('admin/js/table.js') }} " defer></script> -->
-  <script src="{{ asset('admin/vendors/chartjs/Chart.min.js') }} " defer></script>
-  <script src="{{ asset('admin/vendors/jvectormap/jquery-jvectormap.min.js') }} " defer></script>
-  <script src="{{ asset('admin/vendors/jvectormap/jquery-jvectormap-world-mill-en.js') }} " defer></script>
-  <script src="{{ asset('admin/js/material.js') }} " defer></script>
-  <script src="{{ asset('admin/js/misc.js') }} " defer></script>
-  <script src="{{ asset('admin/js/dashboard.js') }} " defer></script>
+  
  
 </head>
 <body>
@@ -73,7 +62,19 @@
         </div>
     </div>
   </div>
+<!-- custom scripts -->
+<script src="{{ asset('admin/js/table.js') }}" ></script>
+  <script src="{{ asset('admin/js/sidebar-animation.js') }}" ></script>
 
+  <script src="{{ asset('admin/js/sidebar.js') }} " ></script>
+  <!-- <script src="{{ asset('admin/js/table.js') }} " ></script> -->
+  <script src="{{ asset('admin/vendors/chartjs/Chart.min.js') }} " ></script>
+  <script src="{{ asset('admin/vendors/jvectormap/jquery-jvectormap.min.js') }} " ></script>
+  <script src="{{ asset('admin/vendors/jvectormap/jquery-jvectormap-world-mill-en.js') }} " ></script>
+  <script src="{{ asset('admin/js/material.js') }} " ></script>
+  <script src="{{ asset('admin/js/misc.js') }} " ></script>
+  <script src="{{ asset('admin/js/dashboard.js') }} " ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   
 </body>
 </html> 
